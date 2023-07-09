@@ -14,8 +14,6 @@ lr = 0.1
 classes_num = 2
 testing_split = .1
 shuffle_dataset = True
-#random_seed = 42
-#random_seed = 9 #76.4706
 random_seed = 9
 
 np_data = np.loadtxt('./data/PTC_FM.csv',delimiter=',')
@@ -26,9 +24,6 @@ Y = np.array([])
 for i in range(len(dataset)):
     Y = np.append(Y,np.array(dataset[i].y)[0])
 
-print(len(Y))
-print(data.shape)
-print(data[1])
 
 all_dataset = Data.TensorDataset(data,torch.LongTensor(Y))
 
